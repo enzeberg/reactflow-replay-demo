@@ -70,7 +70,7 @@ function App() {
 
   const onConnect: OnConnect = useCallback(
     (connection: Connection) => {
-      const newEdge = {
+      const newEdge: Edge = {
         id: `edge_${Date.now()}`,
         source: connection.source!,
         target: connection.target!,
@@ -151,7 +151,7 @@ function App() {
       }
     }
 
-    startReplay(applyEvent, initialNodesRef.current, initialEdgesRef.current)
+    startReplay(applyEvent)
   }, [
     replayState.isReplaying,
     nodes,
